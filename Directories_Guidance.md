@@ -1,16 +1,34 @@
 ### Naming and Application of the Directories
 
-1. **SpeedLoopKpTiTd**  
-   Uses a simple **Velocity PID control loop** implemented in the Arduino IDE.
-2. **DcServoControl**  
-   Includes both control-loop types explained in `Project_Report.pdf (pay attention to chapter 5 part2; 5.2-`PID Position Control:
-   - Velocity PID loop
-   - Classical PID loop
+The following directories contain different versions and implementations of the two-arm robotic project. Each directory corresponds to a specific development stage, control method, or development environment.
 
-     pay attention to figure 27
+1. **`MyArduiniProject`**
+   This directory contains my first version of the project, developed as initial attempts to implement and test the two-arm robotic project using the Arduino IDE.
 
-   The selected control method depends on a parameter in `motor_config.h`.
-   - If `USE_CLASSICAL_PID == 1`, the Classical PID controller is used.
-   - Otherwise, the Velocity PID controller is applied.
-3. **RobatWithDCMotorContrl**  
-   Similar to the `DcServoControl` directory, but adapted and refined for the Arduino IDE instead of VS Code with the PlatformIO extension
+2. **`SpeedLoopKpTiTd`**
+   This directory implements a simple **Velocity PID control loop** using the Arduino IDE.
+
+   For an explanation of the Velocity PID method, please refer to the relevant pages from the **Doğan Ibrahim** book provided in this project.
+
+3. **`DcServoControl`**
+   This directory includes both control-loop methods explained in `Project_Report.pdf`, particularly **Chapter 5, Part 2 (Section 5.2 – PID Position Control)**. Please also refer to **Figure 27**.
+
+   The two implemented methods are:
+
+   * **Velocity PID loop**
+   * **Classical PID loop**
+
+   The selected control method is determined by a parameter in `motor_config.h`:
+
+   * If `USE_CLASSICAL_PID == 1`, the **Classical PID controller** is used.
+   * Otherwise, the **Velocity PID controller** is used.
+
+4. **`RobatWithDCMotorContrl`**
+   This directory contains a similar implementation to `DcServoControl`, but it has been adapted and refined specifically for the **Arduino IDE**, rather than **VS Code with the PlatformIO extension**.
+
+   Therefore:
+
+   * If you are more comfortable with the **Arduino IDE**, use `RobatWithDCMotorContrl`.
+   * If you are more comfortable with **VS Code + PlatformIO**, use `DcServoControl`.
+
+   The two directories essentially are identical; the main difference is just the development environment and project structure.
