@@ -46,5 +46,5 @@ Note: The Joystick in this figure could not be provided hence it was substituted
 
 **Important:** It is worth to google **Interpolation (Trajectory Generation)** and develope this project.
 
-Any feedback or development report me to** peiman.edalatjoo@proton.me** or **edpe1011@h=ka.de** is appreciable.
+Any feedback or development report me to** peiman.edalatjoo@proton.me** or **edpe1011@h-ka.de** is appreciable.
 
