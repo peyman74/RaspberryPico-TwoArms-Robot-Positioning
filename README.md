@@ -1,4 +1,5 @@
-To find out what the directories about, please refer to Directories_Guidance.md file.
+
+*To find out what the directories about, please refer to Directories_Guidance.md file.*
 ***
 
 ### **Introduction:**
