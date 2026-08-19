@@ -1,3 +1,5 @@
+To find out what the directories about, please refer to Directories_Guidance.md file.
+
 **Introduction:**
 
 This project focuses on designing and implementing a digital Proportional-Integral-Derivative (PID) controller to achieve precise position control for a two-axis robotic arm. The system utilises a Raspberry Pi Pico microcontroller to drive two DC motors equipped with quadrature encoders, enabling closed-loop feedback for accurate motion adjustment. The goal is to ensure the robotic arm reaches and maintains desired positions dynamically by combining real-time sensor data (quadrant encoder) with control algorithms. The inputs or set points of the system either attain in the program by keyboard trough serial ports connected to microcontroller or by potentiometers in manual interpolation.
@@ -38,5 +40,7 @@ Note: The Joystick in this figure could not be provided hence it was substituted
 **Multicore:** Using the second core for timely setting/ resetting an LED or a lamp and/or a buzzer during movement of an axis.
 
 **PID function development** – including discard or subtract overflowing
+
+**Important:** It is worth to google **Interpolation (Trajectory Generation)** and develope this project.
 
 
