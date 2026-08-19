@@ -1,14 +1,16 @@
 To find out what the directories about, please refer to Directories_Guidance.md file.
+***
 
-**Introduction:**
+### **Introduction:**
 
 This project focuses on designing and implementing a digital Proportional-Integral-Derivative (PID) controller to achieve precise position control for a two-axis robotic arm. The system utilises a Raspberry Pi Pico microcontroller to drive two DC motors equipped with quadrature encoders, enabling closed-loop feedback for accurate motion adjustment. The goal is to ensure the robotic arm reaches and maintains desired positions dynamically by combining real-time sensor data (quadrant encoder) with control algorithms. The inputs or set points of the system either attain in the program by keyboard trough serial ports connected to microcontroller or by potentiometers in manual interpolation.
 
-Thanks from Professor **Samuel E. de Lucena** for mentoring me in this project
 
+*Thanks from Professor **Samuel E. de Lucena** for mentoring me in this project*
+***
 
-**Applications:
-**
+### Applications:
+
 
 •	Educational demonstrations of closed-loop control systems.
 
@@ -24,7 +26,7 @@ Advantages of Dual Input Modes
 ![image](https://github.com/user-attachments/assets/e73874cc-0a92-466a-86c7-dd1de6ff2610)
 ![image](https://github.com/user-attachments/assets/d3c09fb0-2621-4753-a5ef-4c763b40d659)
 
-Picture by Professor Samuel E. de Lucena
+*Picture by Professor Samuel E. de Lucena*
 
 Note: The Joystick in this figure could not be provided hence it was substituted with two potentiometers. 
 
@@ -44,7 +46,7 @@ Note: The Joystick in this figure could not be provided hence it was substituted
 
 **PID function development** – including discard or subtract overflowing
 
-**Important:** It is worth to google **Interpolation (Trajectory Generation)** and develope this project.
-
+⚖️ **Important**: It is worth to google **Interpolation (Trajectory Generation)** and develope this project.
+***
 Any feedback or development report me to** peiman.edalatjoo@proton.me** or **edpe1011@h-ka.de** is appreciable.
 
