@@ -1,4 +1,4 @@
-<img width="896" height="1193" alt="Pic2" src="https://github.com/user-attachments/assets/02d41d83-4010-4f10-90e1-5284757a8a72" />
+<img width="1024" height="769" alt="Pic1" src="https://github.com/user-attachments/assets/6fb9e653-9767-4e14-b66c-98b7d956efb0" />
 
 ***
 *To find out what the directories about, please refer to Directories_Guidance.md file.*
@@ -52,6 +52,6 @@ Note: The Joystick in this figure could not be provided hence it was substituted
 ***
 Any feedback or development report is appreciable. ** peiman.edalatjoo@proton.me** or **edpe1011@h-ka.de** 
 ***
-<img width="1024" height="769" alt="Pic1" src="https://github.com/user-attachments/assets/6fb9e653-9767-4e14-b66c-98b7d956efb0" />
 
+<img width="896" height="1193" alt="Pic2" src="https://github.com/user-attachments/assets/02d41d83-4010-4f10-90e1-5284757a8a72" />
 
