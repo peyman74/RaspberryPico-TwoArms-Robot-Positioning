@@ -1,6 +1,4 @@
-<img width="1024" height="769" alt="Pic1" src="https://github.com/user-attachments/assets/6fb9e653-9767-4e14-b66c-98b7d956efb0" />
 
-***
 *To find out what the directories about, please refer to Directories_Guidance.md file.*
 ***
 ### **Introduction:**
