@@ -52,4 +52,6 @@ Any feedback or development report is appreciable. ** peiman.edalatjoo@proton.me
 ***
 
 <img width="896" height="1193" alt="Pic2" src="https://github.com/user-attachments/assets/02d41d83-4010-4f10-90e1-5284757a8a72" />
+### 🎥 Robot Demonstration
 
+[Watch the two-arm robot in action](https://github.com/user-attachments/assets/YOUR-VIDEO-ID)
