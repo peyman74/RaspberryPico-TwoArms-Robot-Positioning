@@ -1,10 +1,11 @@
 # Two-Arm Robot Positioning with a Raspberry Pi Pico
 
-*To find out what the directories about, please refer to Directories_Guidance.md file.*
+*To find out what the directories are about, please refer to the Directories_Guidance.md file.*
 
-*To find out detailed explanation, please refer to project-reprt.pdf.*
+*For a detailed explanation, please refer to project-report.pdf.*
 
-*Thanks from Professor **Samuel E. de Lucena** for mentoring me in this project*
+*Thanks to Professor **Samuel E. de Lucena** for mentoring me in this project.*
+
 ***
 
 A digital PID position controller for a two-axis robotic arm driven by DC servo motors, running on a Raspberry Pi Pico (RP2040).
@@ -27,32 +28,32 @@ PC (serial terminal)/potentiometer(manual mode) ──USB──> Raspberry Pi Pi
                                                             └── encoders, zero switches, emergency input
 ```
 
-Both motors are handled by a single RP2040 core, and there is still headroom for more axes. The code is built around a `motor` class, so additional motor objects can be created from the same class. Only two motors have been tested so far. Same code can be applied for other industrial MCPs that reserve specific qudrant encoder input ports.  
+Both motors are handled by a single RP2040 core, and there is still headroom for more axes. The code is built around a `motor` class, so additional motor objects can be created from the same class. Only two motors have been tested so far. The same code can be applied to other industrial MCUs that reserve specific quadrant encoder input ports.
 
 ![image](https://github.com/user-attachments/assets/e73874cc-0a92-466a-86c7-dd1de6ff2610)
 ![image](https://github.com/user-attachments/assets/d3c09fb0-2621-4753-a5ef-4c763b40d659)
 
 *Picture by Professor Samuel E. de Lucena*
+
+Note: The joystick in this figure could not be provided, hence it was substituted with two potentiometers.
+
 ## Features
 
 - **Closed-loop position control** of two DC motors with incremental quadrature encoders (angle range 0–360°).
-- **Two PID implementations**, selectable in `motor_config.h`. Two types of PID format applied and tested:
-  
+- **Two PID implementations**, selectable in `motor_config.h`. Two types of PID format were applied and tested:
   - Classic position-form PID based on the Arduino PID library, with output limiting, integral wind-up protection and derivative-on-measurement to avoid derivative kick.
   - A velocity-form PID (`PID_vel.*`), which is bumpless and does not wind up.
-    
-    more information --> project-reprt.pdf
-    
+
+  More information: project-report.pdf
 - **Three operating modes** via serial commands: manual, parallel (both axes move at once) and sequential (axis 2 starts after axis 1 arrives).
 - **Zero (home) search** at startup using a switch on each axis. The encoder count is reset to 0° at the switch. A non-blocking state-machine version is available.
-- **Encoder noise handling**: a small hardware capacitor filter plus a timing-based software filter that ignores interrupts arriving faster than physically possible, with a separate threshold per motor. Capacitor filter is good enogh that it can work perfectly by bypassing software filter. 
+- **Encoder noise handling**: a small hardware capacitor filter plus a timing-based software filter that ignores interrupts arriving faster than physically possible, with a separate threshold per motor. The capacitor filter is good enough that the system can work perfectly with the software filter bypassed.
 - **Safety logic**:
   - Fail-safe emergency input, where a broken wire is read as an emergency.
   - Zero switch reused as a collision/limit switch during normal operation.
   - Hardware watchdog plus a software loop watchdog.
   - After an emergency or collision, the system requires a new zero search before it moves again.
 - **Configurable build** through compile-time switches (PID type, zero-search method, encoder filter, debug output).
-Note: The Joystick in this figure could not be provided hence it was substituted with two potentiometers. 
 
 Pin assignments are in the `motor` constructor calls in `main.cpp` / the `.ino` file. The emergency input is on GPIO 4.
 
@@ -138,9 +139,9 @@ Reliable encoder counting turned out to be harder than the PID loop. Inconsisten
 ## Limitations
 
 - Only tested with two motors; scaling to more axes is untested.
-- Manual mode is implemented in previous version sucessfuly and removed in the final version instead focusing on other areas.
+- Manual mode was implemented successfully in a previous version and removed from the final version, in order to focus on other areas.
 - The emergency input is polled, not interrupt-driven, so reaction time depends on loop speed.
-- The zero switch doubles applicatios (two diffrent application) as the collision/limit switch. At start up it acts as zero switch afterwards it acts as limit. Real    systems should have separate limit switches at each end of travel.
+- The zero switch has two different applications: at start-up it acts as the zero switch, and afterwards it acts as the limit switch. Real systems should have separate limit switches at each end of travel.
 - The hardware encoder filter is sensitive: deviations of about ±50 pF stopped it working properly.
 - Encoder signals are not ideal quadrature and differ between the two motors, so filter values are motor-specific.
 - Backlash is not compensated.
@@ -152,14 +153,13 @@ Reliable encoder counting turned out to be harder than the PID loop. Inconsisten
 - Separate limit switches and homing switches, wired as normally-closed.
 - Hand-wheel jogging with an encoder, feed and axis selectors, instead of a potentiometer.
 - Automatic or more systematic PID tuning.
-- Anti-bounce or settling logic for the velocity PID to reduce vibration (see Important below).
+- Anti-bounce or settling logic for the velocity PID to reduce vibration.
 - A PC-side GUI for control and live plotting.
 - Backlash compensation.
 - A Schmitt-trigger input stage for cleaner encoder signals.
 - Testing with higher-power motors, with extra care on the safety side.
 
-⚖️ **Important**: It is worth to google *Interpolation (Trajectory Generation)* and develope this project.
-
+⚖️ **Important**: It is worth googling *Interpolation (Trajectory Generation)* and developing this project further.
 
 <img width="896" height="1193" alt="Pic2" src="https://github.com/user-attachments/assets/02d41d83-4010-4f10-90e1-5284757a8a72" />
 
@@ -169,10 +169,12 @@ The following demonstration shows the robot performing the reference-zero search
 
 ![Two-arm robot reference-zero search](docs/robot-demo.gif)
 
-
 ## Author
 
 Peiman Edalatjoo, HKA – Hochschule Karlsruhe, Summer 2025.
+
 ***
-Any feedback or development report is appreciable. ** peiman.edalatjoo@proton.me** or **edpe1011@h-ka.de** 
+
+Any feedback or development report is appreciated: **peiman.edalatjoo@proton.me** or **edpe1011@h-ka.de**
+
 ***
