@@ -1,6 +1,6 @@
 # Two-Arm Robot Positioning with a Raspberry Pi Pico
 
-*To find out what the directories are about, please refer to the Directories_Guidance.md file.*
+*To find out what the directories are about, please refer to the **Directories_Guidance.md** file.*
 
 *For a detailed explanation, please refer to project-report.pdf.*
 
