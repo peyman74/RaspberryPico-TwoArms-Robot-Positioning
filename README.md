@@ -125,9 +125,9 @@ Example: `P 30 60`. Setpoints are limited to 0–360°.
 Key options in `motor_config.h`:
 
 - `USE_CLASSICAL_PID`: 1 = classic PID, 0 = velocity PID
-- `USE_ZERO_NON_BLOCKING`: non-blocking zero search
-- `USE_ENCODER_FILTER`: enable the software encoder filter
-- `DEBUG_SERIAL`: serial debug output
+- `USE_ZERO_NON_BLOCKING`: non-blocking zero search, 1 = activate, 0 = deactivate (using classical function)
+- `USE_ENCODER_FILTER`: enable the software encoder filter, 1 = activate, 0 = deactivate
+- `DEBUG_SERIAL`: serial debug output, 1 = activate, 0 = deactivate
 - Watchdog timeouts, motor dead band, maximum speed, and per-motor encoder filter times
 
 Default classic PID values found by tuning: `Kp = 5.0`, `Ki = 0`, `Kd = 0.25`, sample time 10 ms. Treat these as a starting point for this particular hardware, not universal values.
